@@ -45,7 +45,7 @@ string public path2;
         setFeeInHundredthsOfLink(0);     // 0 LINK
 
     // Initialize request parameters
-    url = 'https://api.sportsdata.io/v4/soccer/scores/json/ScoresBasic/EPL/2024-02-03?key=2c10ff001dc7467cae3de7116d91ed9b';
+    url = 'https://api.sportsdata.io/v4/soccer/scores/json/ScoresBasic/EPL/2024-02-03?key={APIKEY}';
     path1 = '1,AwayTeamScore';
     path2 = '1,HomeTeamScore';
     }
