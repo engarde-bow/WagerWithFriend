@@ -202,7 +202,7 @@ function fulfill2(bytes32 requestId, uint256 data2) public recordChainlinkFulfil
         );
     }
     
-    function sendFundsToWinner() public {
+    function sendFundsToWinnerAndReset() public {
         if (s_response1 > s_response2) {
             s_player1.transfer(address(this).balance);
         }
@@ -213,6 +213,11 @@ function fulfill2(bytes32 requestId, uint256 data2) public recordChainlinkFulfil
             s_player1.transfer(address(this).balance / 2);
             s_player2.transfer(address(this).balance);
         }
+	// Reset Player agreement so they both have to agree again to execute another wager. Also resets Players themselves. 
+	player1Agreed = false;
+	player2Agreed = false;
+ 	s_player1 = payable(address(0));
+        s_player2 = payable(address(0));
         }
 
     function updatePathandURLParameters(string memory _path1, string memory _path2, string memory _url) public onlyOwner {
