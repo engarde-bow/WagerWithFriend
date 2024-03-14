@@ -163,7 +163,7 @@ function fulfill2(bytes32 requestId, uint256 data2) public recordChainlinkFulfil
     s_response2 = data2;
 
     // execute sendFundsToWinner now that data has been recieved.
-    sendFundsToWinner();
+    sendFundsToWinnerAndReset();
 }
 
     // Update oracle address
